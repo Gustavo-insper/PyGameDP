@@ -1,6 +1,7 @@
 # ===== Inicialização =====
 # ----- Importa e inicia pacotes
 # from referencia.jogo_v19 import DONE
+#RODAR ESSE CÓDIGO PARA O JOGO FUNCIONAR
 import pygame
 import random
 from config import WIDTH, HEIGHT, INIT, GAME, QUIT
