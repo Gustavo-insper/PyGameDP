@@ -25,12 +25,10 @@ while state != QUIT:
         state = init_screen(window)
     elif state == GAME:
         state = game_screen(window)
-    #CRIAR TELA DE GAME OVER
-    # elif state==OVER:
+
     else:
         state= game_over_screen(window)
-    # else:
-    #     state = QUIT
+
 
 # ===== Finalização =====
 pygame.quit()  # Função do PyGame que finaliza os recursos utilizados
