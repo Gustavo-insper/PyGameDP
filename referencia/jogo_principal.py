@@ -5,9 +5,11 @@
 
 import pygame
 import random
-from config import WIDTH, HEIGHT, INIT, GAME, QUIT
+from config import WIDTH, HEIGHT, INIT, GAME, QUIT,OVER
 from init_screen import init_screen
 from game_screen import game_screen
+from game_over_screen import game_over_screen
+
 
 
 pygame.init()
@@ -24,10 +26,11 @@ while state != QUIT:
     elif state == GAME:
         state = game_screen(window)
     #CRIAR TELA DE GAME OVER
-    # elif state==DONE:
-    #     state= game_over_screen(window)
+    # elif state==OVER:
     else:
-        state = QUIT
+        state= game_over_screen(window)
+    # else:
+    #     state = QUIT
 
 # ===== Finalização =====
 pygame.quit()  # Função do PyGame que finaliza os recursos utilizados
