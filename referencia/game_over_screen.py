@@ -25,10 +25,7 @@ def game_over_screen(screen):
     background_rect = background.get_rect()
 
     # Tentando imprimir a pontuacao
-    text_surface = pygame.font.Font(os.path.join(FNT_DIR, 'PressStart2P.ttf'), 28).render("{:08d}".format(score), True, YELLOW)
-    text_rect = text_surface.get_rect()
-    text_rect.midtop = (WIDTH / 2,  10)
-    window.blit(text_surface, text_rect)
+
 
     running = True
     while running:
@@ -55,6 +52,12 @@ def game_over_screen(screen):
         # A cada loop, redesenha o fundo e os sprites
         screen.fill(BLACK)
         screen.blit(background, background_rect)
+        #IMPRIMINDO A PONTUAÇÂO:
+        text_surface = pygame.font.Font(os.path.join(FNT_DIR, 'PressStart2P.ttf'), 28).render("{:08d}".format(score), True, YELLOW)
+        text_rect = text_surface.get_rect()
+        text_rect.midtop = (250, 200)
+        window.blit(text_surface, text_rect)
+        
 
         # Depois de desenhar tudo, inverte o display.
         pygame.display.flip()
