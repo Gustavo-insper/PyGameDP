@@ -5,19 +5,17 @@ from init_screen import init_screen
 from game_screen import SCORE_FONT,YELLOW
 import os
 
-
-
-
-
 from config import IMG_DIR, BLACK, FPS, GAME, QUIT,OVER,HEIGHT,WIDTH,INIT,FNT_DIR
+from assets import load_assets
 
-score = 0
 
 
-def game_over_screen(screen):
+def game_over_screen(screen,score):
     # Variável para o ajuste de velocidade
     clock = pygame.time.Clock()
     window = pygame.display.set_mode((WIDTH, HEIGHT))
+
+    assets = load_assets()
 
 
     # Carrega o fundo da tela inicial
@@ -25,7 +23,11 @@ def game_over_screen(screen):
     background_rect = background.get_rect()
 
     # Tentando imprimir a pontuacao
-
+    
+    # all_meteors = pygame.sprite.Group()
+    # all_bullets = pygame.sprite.Group()
+    # score=0
+    # hits = pygame.sprite.groupcollide(all_meteors, all_bullets, True, True, pygame.sprite.collide_mask)
 
     running = True
     while running:
@@ -33,26 +35,25 @@ def game_over_screen(screen):
         # Ajusta a velocidade do jogo.
         clock.tick(FPS)
 
+        
         # Processa os eventos (mouse, teclado, botão, etc).
         for event in pygame.event.get():
             # Verifica se foi fechado.
             if event.type == pygame.QUIT:
                 state = QUIT
                 running = False
+                
 
             if event.type == pygame.KEYUP: # QUalquer TECLA (keyup)
-                state = GAME
+                state = INIT
                 running = False
-            
-            
-            # if event.type == pygame.KEYUP: 
-            #     state = OVER
-            #     running = False
+
 
         # A cada loop, redesenha o fundo e os sprites
+       
         screen.fill(BLACK)
         screen.blit(background, background_rect)
-        #IMPRIMINDO A PONTUAÇÂO:
+        # IMPRIMINDO A PONTUAÇÂO:
         text_surface = pygame.font.Font(os.path.join(FNT_DIR, 'PressStart2P.ttf'), 28).render("{:08d}".format(score), True, YELLOW)
         text_rect = text_surface.get_rect()
         text_rect.midtop = (250, 200)
@@ -62,6 +63,6 @@ def game_over_screen(screen):
         # Depois de desenhar tudo, inverte o display.
         pygame.display.flip()
 
-    # return state
+    return state
     
-    return  init_screen(window)
+    # return  init_screen(window)

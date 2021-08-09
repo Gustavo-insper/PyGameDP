@@ -24,10 +24,10 @@ while state != QUIT:
     if state == INIT:
         state = init_screen(window)
     elif state == GAME:
-        state = game_screen(window)
+        state,score = game_screen(window)
 
-    else:
-        state= game_over_screen(window)
+    elif state==OVER:
+        state= game_over_screen(window,score)
 
 
 # ===== Finalização =====

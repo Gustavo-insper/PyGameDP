@@ -1,5 +1,5 @@
 import pygame
-from config import FPS, WIDTH, HEIGHT, BLACK, YELLOW, RED
+from config import FPS, WIDTH, HEIGHT, BLACK, YELLOW, RED, OVER,QUIT
 from assets import load_assets, DESTROY_SOUND, BOOM_SOUND, BACKGROUND, SCORE_FONT
 from sprites import Ship, Meteor, Bullet, Explosion
 
@@ -47,6 +47,7 @@ def game_screen(window):
             # ----- Verifica consequências
             if event.type == pygame.QUIT:
                 state = DONE
+                return QUIT, score
             # Só verifica o teclado se está no estado de jogo
             if state == PLAYING:
                 # Verifica se apertou alguma tecla.
@@ -120,6 +121,9 @@ def game_screen(window):
                     state = PLAYING
                     player = Ship(groups, assets)
                     all_sprites.add(player)
+    
+
+        
 
         # ----- Gera saídas
         window.fill(BLACK)  # Preenche com a cor branca
@@ -140,3 +144,5 @@ def game_screen(window):
         window.blit(text_surface, text_rect)
 
         pygame.display.update()  # Mostra o novo frame para o jogador
+
+    return OVER,score
