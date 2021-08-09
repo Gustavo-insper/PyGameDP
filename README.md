@@ -8,3 +8,5 @@ Tela de game over mostrando a pontuação;
 Reiniciar o jogo (inclusive a pontuação e vidas) quando o jogador apertar qualquer tecla na tela de game over;
 Criar uma tela de instruções, que mostra o que cada tecla faz
 
+Para rodar o jogo, acessar jogo_principal e rodar esse código.
+
