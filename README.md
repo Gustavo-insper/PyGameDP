@@ -8,5 +8,5 @@ Foram implementados mais quatro funcionalidades ao jogo prévio disponibilizado.
 3.  Reiniciar o jogo (inclusive a pontuação e vidas) quando o jogador apertar qualquer tecla na tela de game over;
 4.  Criar uma tela de instruções, que mostra o que cada tecla faz
 
-Para rodar o jogo, acessar jogo_principal e rodar esse código.
+Para rodar o jogo, acessar referencia/jogo_principal e rodar esse código.
 
