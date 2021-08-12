@@ -1,11 +1,10 @@
 import pygame
 import random
 from os import path
-from init_screen import init_screen
 from game_screen import SCORE_FONT,YELLOW
 import os
 
-from config import IMG_DIR, BLACK, FPS, GAME, QUIT,OVER,HEIGHT,WIDTH,INIT,FNT_DIR
+from config import IMG_DIR, BLACK, FPS, QUIT,HEIGHT,WIDTH,INIT,FNT_DIR
 from assets import load_assets
 
 
@@ -24,11 +23,6 @@ def game_over_screen(screen,score):
 
     # Tentando imprimir a pontuacao
     
-    # all_meteors = pygame.sprite.Group()
-    # all_bullets = pygame.sprite.Group()
-    # score=0
-    # hits = pygame.sprite.groupcollide(all_meteors, all_bullets, True, True, pygame.sprite.collide_mask)
-
     running = True
     while running:
 
@@ -64,5 +58,3 @@ def game_over_screen(screen,score):
         pygame.display.flip()
 
     return state
-    
-    # return  init_screen(window)
